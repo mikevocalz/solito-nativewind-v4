@@ -7,7 +7,7 @@ const nextConfig = {
   // https://github.com/necolas/react-native-web/pull/2330
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
-    reactStrictMode: true,
+  reactStrictMode: true,
   transpilePackages: [
     'expo-router',
     'react-native',
@@ -19,7 +19,7 @@ const nextConfig = {
     'react-native-svg',
     'nativewind',
     'react-native-gesture-handler',
-     'react-native-css-interop'
+    'react-native-css-interop'
   ],
 }
 

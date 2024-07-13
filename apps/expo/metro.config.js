@@ -8,7 +8,7 @@ const config = getDefaultConfig(__dirname, {
 
 // This is not needed for NativeWind, it is configuration for Metro to understand monorepos
 const projectRoot = __dirname;
-const workspaceRoot = path.resolve(projectRoot, "../..");
+const workspaceRoot = path.resolve(projectRoot, "../.."); // This can be replaced with `find-yarn-workspace-root`
 config.watchFolders = [workspaceRoot];
 config.resolver.disableHierarchicalLookup = true;
 config.resolver.nodeModulesPaths = [

@@ -1,4 +1,6 @@
 import ReactNativeFeatureFlags from "react-native/Libraries/ReactNative/ReactNativeFeatureFlags";
+import { registerRootComponent } from 'expo';
+import { ExpoRoot } from 'expo-router';
 
 // enable the JS-side of the w3c PointerEvent implementation
 ReactNativeFeatureFlags.shouldEmitW3CPointerEvents = () => true;
@@ -8,4 +10,11 @@ ReactNativeFeatureFlags.shouldEmitW3CPointerEvents = () => true;
 ReactNativeFeatureFlags.shouldPressibilityUseW3CPointerEventsForHover = () =>
   true;
 
-import "expo-router/entry";
+
+// Must be exported or Fast Refresh won't update the context
+export function App() {
+  const ctx = require.context('./app');
+  return <ExpoRoot context={ctx} />;
+}
+
+registerRootComponent(App);

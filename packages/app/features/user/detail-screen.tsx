@@ -1,10 +1,12 @@
-import { createParam } from 'solito'
+"use client"
 import { TextLink } from 'solito/link'
 import { Text, View } from 'react-native'
-const { useParam } = createParam<{ id: string }>()
+
+import { useParams } from 'solito/navigation'
+type Params = { id: string; } 
 
 const UserDetailScreen = () => {
-  const [id] = useParam('id')
+  const {id} = useParams<Params>()
 
   return (
     <View className="flex-1 items-center justify-center bg-violet-300">
